@@ -1,0 +1,50 @@
+<hr></hr>
+<p align="left"><font color="blue">Please enter your Educational details --- (last one first)</font></p>
+	
+	<form name="myform2" id="myform2" method="POST">
+	 {% csrf_token %}		
+         <input type="hidden" name="y1" value="{{objects_id}}">
+	 <table border=0 id="det" class="t2" align="center">
+		<tr>
+		   <td class="td"><font color="red">*</font>Qualification:</td>
+		   <td class="td1"><input type="text" name="quafn" id="qua" required>
+	</tr>	
+	<tr>
+	   <td class="td"><font color="red">*</font>University:</td>
+		   <td class="td1"><input type="text" id="uni" name="univ" required></td>
+	</tr>
+	<tr>
+	  <td class="td">Year_of_Passing:</td>
+	  <td class="td1"><select id="year" name="year" required ></select></td>
+	</tr>
+	<tr>
+	  <td class="td">Aggrigation:</td>
+	  <td class="td1"><select id="perc" name="perc" required></select></td>
+	</tr>
+	<tr>
+	  <td align="center" class="td">
+		<input type="button" class="sml" id="addMore" name="" size="20" value="+Add More" >
+		
+	  </td>
+	  <td align="center"><input type="button" class="sml" id="complete" name="" size="20" value="Complete"></td>
+	</tr>
+</table>
+</form>
+<script type="text/javascript">
+	var yearOptions = document.getElementById("year");
+		for ( var i = 2014 ; i>=1900; --i)
+			{
+			var option = document.createElement('option');
+			option.text = option.value = i;
+			yearOptions.add(option,0);
+			}
+	var percOption = document.getElementById("perc");
+		for ( var i = 100 ; i>=0; --i)
+			{
+		var option = document.createElement('option');
+		option.text = option.value = i;
+		percOption.add(option,0);
+		}
+</script>
+
+

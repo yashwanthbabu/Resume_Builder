@@ -1,0 +1,202 @@
+<html>
+     <head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}sk.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+	<script type="text/javascript">
+	$(document).on("click","#getMyResume",function(){
+		var form_data = $("#myform1").serialize();
+        $("#myform1").validate({
+	        errorClass: 'text-danger',
+        });
+		if ($("#myform1").valid()){	    
+			$.ajax({
+				  url : '/registration/',
+				  type:'POST',
+				  data: form_data,
+				  success: function(data){
+					$('#sk').html(data);
+                  }
+			});
+		}
+	});
+	$(document).on("click","#addMore",function(){
+		var form_data = $("#myform2").serialize();
+        $("#myform2").validate({
+	        errorClass: 'text-danger',
+        });
+		if ($("#myform2").valid()){	    
+			$.ajax({
+				  url : '/addmore/',
+				  type:'POST',
+				  data: form_data,
+				  success: function(data){
+					$('#sk').html(data);
+                  }
+			});
+		}
+	});
+	$(document).on("click","#complete",function(){
+		var form_data = $("#myform2").serialize();
+        $("#myform2").validate({
+	        errorClass: 'text-danger',
+        });
+		if ($("#myform2").valid()){	    
+			$.ajax({
+				  url : '/addmore/',
+				  type:'POST',
+				  data: form_data+"&cmp=true",
+				  success: function(data){
+					$('#sk2').html(data);
+                  }
+			});
+		}
+	});
+/*
+
+	        $(document).on("click",'#cmp3',function() {
+			$.ajax({
+				url : '/profn/',
+				type: 'POST',
+				data:form_data+"&cmp1=true",
+				success: function(data){
+					$('#sk').html(data);			
+	            //$('#det1 input,select,textarea').val('')
+	            //clearRows($('#det1 input,select,textarea').val());
+		}
+	        });
+	    }
+	});
+$(document).ready(function() {
+		$('#cmp4').click(function() {
+		
+		alert('Successfully saved your details');
+		});
+	}); */
+	$(document).on("click","#cmp3",function(){
+		var form_data = $("#myform3").serialize();
+        $("#myform3").validate({
+	        errorClass: 'text-danger',
+        });
+		if ($("#myform3").valid()){	    
+			$.ajax({
+				  url : '/profn/',
+				  type:'POST',
+				  data: form_data,
+				  success: function(data){
+					$('#sk2').html(data);
+                  }
+			});
+		}
+	});
+	$(document).on("click","#cmp4",function(){
+		var form_data = $("#myform3").serialize();
+        $("#myform3").validate({
+	        errorClass: 'text-danger',
+        });
+		if ($("#myform3").valid()){	    
+			$.ajax({
+				  url : '/profn/',
+				  type:'POST',
+				  data: form_data+"&cmp=true",
+				  success: function(data){
+			          print("Successfully Saved your details");
+                  }
+			});
+		}
+	});
+        $(document).on("click","#convert",function(){
+        var form_data = $("#myform3").serialize();
+         $("#myform3").validate({
+	        errorClass: 'text-danger',
+        });
+         if($("#myform3").valid()){
+            $.ajax({
+                         url :'/email/',
+                         type :'POST',
+                         data : form_data,
+                         success: function(data){
+                         $('#sk3').html(data)
+           }
+                });
+          }
+              });
+        $(document).on("click","#send",function(){
+        var form_data = $("#myform4").serialize();
+         $("#myform4").validate({
+	        errorClass: 'text-danger',
+        });
+         if($("#myform4").valid()){
+            $.ajax({
+                         url :'/send/',
+                         type :'POST',
+                         data : form_data,
+                         success: function(data){
+                         alert('sent successfully')
+           }
+                });
+          }
+              });
+       /* $(document).on("click","#convert",function(){
+                 var form_data = $("#myform3").serialize();
+        $("#myform3").validate({
+	        errorClass: 'text-danger',
+        });
+		if ($("#myform3").valid()){	    
+			$.ajax({
+				  url : '/convert/',
+				  type:'POST',
+				  //data: form_data+"&cmp=true",
+				  //success: function(data){
+			          //alert("Successfully Saved your details");
+                  }
+			});
+		}
+	}); */
+        
+
+
+</script>
+    </head>
+      <body>
+	<div id="head">
+	   <h2>Resume in Minutes</h2>
+		<p>Get Your Resume in Minutes - Start Now( Image content)</p>
+	</div>
+   	<div id="log1">
+	   <div id="sp">
+		<form name="myform1" id ="myform1" method="POST">
+		{% csrf_token %} 
+ 		<table class="t1" border="0" align="center">
+			<tr><td></td></tr>
+			<tr><td></td></tr>
+		        <tr align="center">
+		      	    <td><font color="red">*</font>Full_name:</td>
+		            <td><input id="name" type="text" name="fullname" size="25px" required></td>
+		    	</tr>
+		    	<tr align="center">
+		    	    <td><font color="red">*</font>Email_id:</td>
+		    	    <td><input id="email" type="email" name="emailid" size=25px required></td>
+		    	</tr>
+	    		<tr>
+			   <td colspan=4 align="center">
+				<button class="sml" name="sml" type="button" id ="getMyResume">Get My Resume</button>
+			  </td>
+			</tr>
+		</table>
+		</form> 
+	    </div>
+	</div>
+	<div id="sk"></div>
+	<div id="sk2"></div>
+        <div id="sk3"></div>
+
+    </body> 
+
+	
+</html>
+
+

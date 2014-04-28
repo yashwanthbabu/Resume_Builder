@@ -1,0 +1,75 @@
+<html>
+     <head><title></title>
+	<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}sk.css">
+	<script type="text/javascript">
+		var select = document.getElementById("exp");
+			for ( var i = 100 ; i>=0; --i)
+				{
+			var option = document.createElement('option');
+			option.text = option.value = i;
+			select.add(option,0);
+			}
+		
+	
+	    $(document).ready(function() {
+	        $('#cmp3').click(function() {
+	            $('#det1 input,select,textarea').val('')
+	            clearRows($('#det1 input,select,textarea').val());
+	        });
+	    });
+	</script>
+	<script>
+		$(document).ready(function() {
+		$('#cmp4').click(function() {
+		
+		alert('Successfully saved your details');
+		//return false;
+		});
+		});
+	</script>
+     </head>
+     <body>
+	
+	<fieldset><legend><font color="blue">Please enter your Professional details</font></legend>
+		<!--<form name="myform3" method="POST">
+	     {% csrf_token %}		 !-->
+	    <table border=0 id="det1" class="t1" align="center">
+	      
+	      <tr>
+	         <td class="td">
+			<!--<font color="red">*</font> !-->
+			Total_Experience_in_months:</td>
+	         <td class="td1"><select id="exp" name="exp"></select></td>
+	      </tr>
+		<tr>
+	         <td class="td">
+			<!--<font color="red">*</font> !-->
+			Job_Type:</td>
+	         <td class="td1"><select name="job" id="qua"><option>Select One</option><option>Full-Time</option>
+						<option>Part-Time</option></select></td>
+	      </tr>	
+	      <tr>
+		<td class="td">Current_Industry:</td>
+		<td class="td1"><input type="text" name="ind"></td>
+	      </tr>
+	      <tr>
+	        <td class="td">Functional_Area:</td>
+		<td class="td1"><input type="text" name="func"></td>
+	     </tr>
+	     <tr>
+		<td>Key_Skills:</td>
+		<td><textarea rows="4" cols="30" name="key"></textarea></td>
+	     </tr>
+	     <tr>
+	        <td align="center" class="td">
+		    <button class="sml" id="cmp3" size="20">+ Add More</button></button></td>
+		<td align="center"><button class="sml" id="cmp4" size="20">Complete</button></td>
+	     </tr>
+	   </table>
+	   </form>
+		</fieldset>
+      </body>
+</html>	
+
+
+

@@ -1,0 +1,101 @@
+<html>
+     <head><title></title>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}sk.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>   	
+	<script type="text/javascript">
+		var select = document.getElementById("year");
+			for ( var i = 2014 ; i>=1900; --i)
+				{
+				var option = document.createElement('option');
+				option.text = option.value = i;
+				select.add(option,0);
+				}
+	
+		var select = document.getElementById("perc");
+			for ( var i = 100 ; i>=0; --i)
+				{
+			var option = document.createElement('option');
+			option.text = option.value = i;
+			select.add(option,0);
+			}
+	
+	  $(document).ready(function() {
+          $('#cmp1').click(function() {
+	  var qualfn=$('#qua').val();
+	  var univ=$('#uni').val();
+		if(qualfn == '')
+		{
+		alert("Please enter the Qualification")
+		//fullname.focus()
+		return false;
+		}
+		if(univ =='')
+		{
+		alert("Enter the University name")
+		return false;
+		}
+		else
+		{
+		$('#det input,select').val('')
+		clearRows($('#det input,select').val());
+		}
+	});
+	}); 
+
+	$(document).ready(function() {
+        $('#cmp2').click(function() {
+	var qualfn=$('#qua').val();
+	var univ=$('#uni').val();
+		if(qualfn == '')
+		{
+		alert("Please enter the Qualification")
+		//fullname.focus()
+		return false;
+		}
+		if(univ =='')
+		{
+		alert("Enter University name")
+		}
+		else
+		{
+  		$('#sk2').load('/profn/');
+		return false;
+		}
+	});
+	});
+	</script>
+     </head>
+     <body>
+	<!--<fieldset id="f2" style="text-align:right;"> !-->
+	<hr></hr>
+	<p align="left"><font color="blue">Please enter your Educational details --- (last one first)</font></p> 	 <!--<form name="myform2"  method="POST">
+	     {% csrf_token %}		!-->
+	     <table border=0 id="det" class="t1" align="center">
+	    	<tr>
+	       	   <td class="td"><font color="red">*</font>Qualification:</td>
+	       	   <td class="td1"><input type="text" name="quafn" id="qua">
+		</tr>	
+		<tr>
+		   <td class="td"><font color="red">*</font>University:</td>
+	           <td class="td1"><input type="text" id="uni" name="univ"></td>
+		</tr>
+		<tr>
+		  <td class="td">Year_of_Passing:</td>
+		  <td class="td1"><select id="year" name="year"></select></td>
+		</tr>
+		<tr>
+		  <td class="td">Aggrigation:</td>
+		  <td class="td1"><select id="perc" name="perc"></select></td>
+		</tr>
+		<tr>
+		  <td align="center" class="td">
+			<button class="sml" id="cmp1" name="" size="20">+Add More</button></td>
+	 	  <td align="center"><button class="sml" id="cmp2" name="" size="20">Complete</button></td>
+		</tr>
+	</table>
+	</form>
+	</fieldset>
+	</body>
+</html>	
+

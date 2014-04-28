@@ -1,0 +1,154 @@
+/* Body Style */
+body {
+	background-color: #ffffff;
+	color: #000000;;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 1.5em;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-position:center top;
+	background: url("bkg_new.png") repeat;
+}
+
+/* Heading Style */
+#head	{
+	float:left;
+	width:100%;
+	text-align:center;
+	color:blue;
+	height:auto;
+}
+
+/* LOgin div Style */
+#log1	{
+	float:left;
+	width:100%;
+	height:auto;
+}
+
+#sp	{
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:10px;
+	margin-right:10px;
+	height:auto;
+}
+
+#f1	{
+	
+}
+
+#f2	{
+	border-top:0;
+}
+
+
+/* Table Style */
+.t1	{
+	/*background: url("img2.jpeg") repeat;*/
+	border-radius:10px 10px 10px 10px;
+	height:180px;
+	border-spacing:10px 10px 10px 10px;
+	width:auto;
+	
+}
+
+/* Button Style */
+.sml {
+	background-color:#A7CFDF;
+	background-image: linear-gradient(to bottom, #A7CFDF, #23538A);
+	border: 1px solid #7EB9D0;
+	color:#ffffff;
+	text-size:bold;
+	margin:20px 20px 20px 20px;
+	border-radius:10px 10px 10px 10px;
+	height:60px;
+	display:inline-block;
+	cursor:pointer;
+	width:auto;
+	}
+
+/* Empty div - Content div Style */
+#sk	{
+	float:left;
+	width:100%;
+	height:auto;
+}
+
+#sk2	{
+	float:left;
+	width:100%;
+	height:auto;
+}
+
+/* Page2 Heading Style */
+#det	{
+	width:auto;
+	border-radius:10px 10px 10px 10px;
+}
+
+#edn	{
+	float:left;
+	width:100%;
+}
+
+#deta	{
+	float:left;
+	width:100%;
+}
+/*
+.box {
+       
+	border : 3px solid #B5E0EF;
+	border-radius : 10px 10px 10px 10px;
+	padding : 10px;
+	position : relative;
+	z-index : 100;                    		      
+        } */
+
+.td	{
+ 	width:auto;
+}
+
+.td1	{
+	width:auto;
+}
+
+#addMore	{
+	width: 100px;
+	height: 40px;
+	background-color: #33FF00;
+	moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	padding: 5px;
+}
+
+#complete	{
+	width: 100px;
+	height: 40px;
+	background-color: #33FF00;
+	moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	padding: 5px;
+}
+
+#cmp3	{
+	width: 100px;
+	height: 40px;
+	background-color: #33FF00;
+	moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	padding: 5px;
+}
+
+#cmp4	{
+	width: 100px;
+	height: 40px;
+	background-color: #33FF00;
+	moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	padding: 5px;
+}
+
+

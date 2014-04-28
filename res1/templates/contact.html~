@@ -1,0 +1,14 @@
+<FORM name="myform4" type="hidden" id="myform4" METHOD="POST">
+{% csrf_token %}
+
+<!--Name: <INPUT TYPE="text" NAME="username"><BR>
+Email: <INPUT TYPE="text" NAME="from_email"><BR>
+Message: <BR>
+<TEXTAREA NAME="message" ROWS="10" WRAP="hard">
+</TEXTAREA>-->
+<INPUT NAME="redirect" TYPE="hidden">
+<INPUT NAME="NEXT_URL" TYPE="hidden">
+<BR><p>welcome</p>
+<INPUT TYPE="button" VALUE="Send" id="send" name="send">
+<INPUT TYPE="reset" VALUE="Clear">
+</FORM>

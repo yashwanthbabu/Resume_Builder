@@ -1,0 +1,5 @@
+Hi {{fullname}}
+
+You are successfully registered. Soon we will send the best resume that matches your profile.
+
+Thank you
