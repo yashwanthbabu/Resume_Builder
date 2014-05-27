@@ -4,9 +4,9 @@ from django.http import HttpResponseRedirect, HttpResponse
 from res1.models import *
 from django.shortcuts import render_to_response
 #from flask import Flask, render_template, redirect, url_for
-from django.core.mail import send_mail,BadHeaderError
+from django.core.mail import send_mail,EmailMessage,BadHeaderError
 from pdfs import pdf
-import cStringIO
+import cStringIO as StringIO
 import ho.pisa as pisa
 #from generic_mail import Email
 from django.template.loader import get_template,render_to_string
