@@ -4,6 +4,8 @@
 	<form name="myform2" id="myform2" method="POST">
 	 {% csrf_token %}		
          <input type="hidden" name="y1" value="{{objects_id}}">
+         <input type="hidden" name="m1" value="{{mail}}">
+         <input type="hidden" name="n1" value="{{name}}">
 	 <table border=0 id="det" class="t2" align="center">
 		<tr>
 		   <td class="td"><font color="red">*</font>Qualification:</td>
