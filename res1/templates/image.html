@@ -1,0 +1,39 @@
+<form name="myform10" id="myform10" method="POST">
+{% csrf_token %}
+
+<center><h1> <U>Please Choose the Format</U> </h1> <br>
+
+<input type="radio" name="imgControl" value="0" id="format1" onclick="ChangeImg(this.value)"> Format 1
+<input type="radio" name="imgControl" value="1" id="format2" onclick="ChangeImg(this.value)"> Format 2
+<input type="radio" name="imgControl" value="2" id="format3" onclick="ChangeImg(this.value)"> Format 3 </center>
+<p>
+<center><img id="CommonImg" src="" alt="" height="500" width="500"></center> <br> <br>
+<center><input type="button" value="Register" id="image" name="image"></center>
+</form>
+
+<script type="text/javascript">
+var ImgArray = [
+  "{{STATIC_URL}}Format1.png",
+  "{{STATIC_URL}}Format2.png",
+  "{{STATIC_URL}}Format3.png",
+  
+];
+function ChangeImg(value) {
+  document.getElementById('CommonImg').src = ImgArray[value];
+//  document.getElementById('CommonImg').alt = ImgArray[imgPtr]; 
+}
+</script> 
+
+<script>
+
+$(document).ready(function(){
+$("#image").click(function(){
+var image = $("#image").val();
+    if($("#image:checked").length == 0)
+        {
+          alert("Please select any format");
+          return false;
+        }
+});
+});
+</script>
