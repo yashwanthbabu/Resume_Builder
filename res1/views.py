@@ -63,10 +63,10 @@ def addmore(request):
         print request
 	cmp = request.POST.get("cmp",None)
 	if cmp == "true":
-	    return render(request,'professional.html',{'objects_id':obj_id,'mail':m_id,'name':n_id,'qua':quafn,'univ':univ,'year':year,'perc':perc}})
+	    return render(request,'professional.html',{'objects_id':obj_id,'mail':m_id,'name':n_id,'qua':quafn,'univ':univ,'year':year,'perc':perc})
     else:
 	raise Http404
-    return render(request,'education.html',{'objects_id':obj_id,'mail':m_id,'name':n_id,'qua':quafn,'univ':univ,'year':year,'perc':perc}})
+    return render(request,'education.html',{'objects_id':obj_id,'mail':m_id,'name':n_id,'qua':quafn,'univ':univ,'year':year,'perc':perc})
     
 
 
