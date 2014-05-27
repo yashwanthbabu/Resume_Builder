@@ -1,0 +1,40 @@
+<form name="myform7" id="myform7" method="POST">
+{% csrf_token %}
+<h3><i><p align="center">Full name:   {{fullname}}  <br> Mail Id:  {{mailing}}</p></i></h3>
+
+<h4><u> OBJECTIVE:</u> </h4>
+    <p><font face="Verdana">To be a catalyst in the growth of the company I work for and simultaneously foster my skills and abilities to transfer into a successful professional in this competitive world</font> </p>
+<h3>EDUCATION DETAILS:</h3>
+<table border=0 cellspacing=4 cellpadding=4>
+
+	<tr><th><b><center>QUALIFICATION</center></b></th>
+	<th><b><center>UNIVERSITY</center></b></th>
+	<th><b><center>YEAR OF PASSING</center></b></th>
+	<th><b><center>PERCENTAGE</center></b></th></tr>
+
+	<tr><td><center>{{qua}}</center></td>
+	<td><center>{{univ}}</center></td>
+	<td><center> {{year}}</center></td>
+	<td><center>{{perc}}</center></td></tr>
+
+</table>
+
+
+<h3>PROFESSIONAL DETAILS:</h3>
+<table border=0 cellspacing=5 cellpadding=5 width="500">
+
+	<tr><th><b><center>JOB TYPE</center></b></th>
+	<th><b><center>TOTAL EXPERIENCE</center></b></th>
+	<th><b><center>CURRENT INDUSTRY</center></b></th>
+	<th><b><center>FUNCTIONAL AREA</center></b></th>
+        <th><b><center>KEY SKILLS</center></b></th></tr>
+
+	<tr><td><center>{{job}}</center></td>
+	<td><center>{{exp}}</center></td>
+	<td><center> {{ind}}</center></td>
+	<td><center>{{func}}</center></td>
+	<td><center>{{key}}</center></td></tr>
+
+
+
+</form>
