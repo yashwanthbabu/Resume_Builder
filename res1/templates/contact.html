@@ -1,6 +1,21 @@
-<FORM name="myform4" type="hidden" id="myform4" METHOD="POST">
-{% csrf_token %}
 
+
+
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}sk.css">
+<form name="myform4" id="myform4" method="POST">
+{% csrf_token %}
+<input type="hidden" name="m3" value="{{mail}}">
+<input type="hidden" name="n3" value="{{name}}">
+<input type="hidden" name="q2" value="{{qua}}">
+<input type="hidden" name="u2" value="{{univ}}">
+<input type="hidden" name="y12" value="{{year}}">
+<input type="hidden" name="p2" value="{{perc}}">
+<input type="hidden" name="j1" value="{{job}}">
+<input type="hidden" name="e1" value="{{exp}}">
+<input type="hidden" name="i1" value="{{ind}}">
+<input type="hidden" name="f1" value="{{func}}">
+<input type="hidden" name="k1" value="{{key}}">
+<input type="hidden" name="z1" value="{{objects_id}}">
 <!--Name: <INPUT TYPE="text" NAME="username"><BR>
 Email: <INPUT TYPE="text" NAME="from_email"><BR>
 Message: <BR>
@@ -9,6 +24,42 @@ Message: <BR>
 <INPUT NAME="redirect" TYPE="hidden">
 <INPUT NAME="NEXT_URL" TYPE="hidden">
 <BR>
-<INPUT TYPE="button" VALUE="Send" id="send" name="send">
-<INPUT TYPE="reset" VALUE="Clear">
+<center><h1> <U>Please Choose the Format</U> </h1> <br>
+
+<input type="radio" name="imgControl" class="cl" value="0" id="format1" onclick="ChangeImg(this.value)"> Format 1
+<input type="radio" name="imgControl" class="cl" value="1" id="format2" onclick="ChangeImg(this.value)"> Format 2
+<input type="radio" name="imgControl" class="cl" value="2" id="format3" onclick="ChangeImg(this.value)"> Format 3 </center>
+<p>
+<center><img id="CommonImg" src="" alt="" height="500" width="500"></center> <br> <br>
+<center><INPUT TYPE="button" VALUE="Register" id="send" name="send"></center>
 </FORM>
+<script type="text/javascript">
+var ImgArray = [
+  "{{STATIC_URL}}Format1.png",
+  "{{STATIC_URL}}Format2.png",
+  "{{STATIC_URL}}Format3.png",
+  
+];
+function ChangeImg(value) {
+  document.getElementById('CommonImg').src = ImgArray[value];
+//  document.getElementById('CommonImg').alt = ImgArray[imgPtr]; 
+}
+</script>
+
+<script>
+
+$(document).ready(function(){
+$("#send").click(function(){
+var format1 = $('.cl').val();
+
+
+   if ($(".cl:checked").length == 0)
+   {
+    alert("please select the format");
+    return false;
+   }
+   
+});
+});
+</script>
+
