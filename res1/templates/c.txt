@@ -1,5 +1,13 @@
-Hi {{fullname}}
+Hi {{fullname}} !
+
+Your Mail Id: {{mailing}}
 
 You are successfully registered. Soon we will send the best resume that matches your profile.
 
+Here is the soft copy of your details. Please check the attachment.
+
+If you want to make any changes please mail us with your name and mail id.
+
 Thank you
+
+--Management Team
