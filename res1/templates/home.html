@@ -103,39 +103,27 @@ $(document).ready(function() {
 				  type:'POST',
 				  data: form_data+"&cmp=true",
 				  success: function(data){
-			          alert("Successfully Saved your details");
+			          $('#sk3').html(data);
                   }
 			});
 		}
 	});
-        $(document).on("click","#convert",function(){
-        var form_data = $("#myform3").serialize();
-         $("#myform3").validate({
-	        errorClass: 'text-danger',
-        });
-         if($("#myform3").valid()){
-            $.ajax({
-                         url :'/email/',
-                         type :'POST',
-                         data : form_data,
-                         success: function(data){
-                         $('#sk3').html(data)
-           }
-                });
-          }
-              });
-        $(document).on("click","#send",function(){
+        $(document).on("click","#send",function(){ 
         var form_data = $("#myform4").serialize();
          $("#myform4").validate({
+                
 	        errorClass: 'text-danger',
         });
          if($("#myform4").valid()){
             $.ajax({
+                         
                          url :'/send/',
                          type :'POST',
                          data : form_data,
                          success: function(data){
-                         alert('sent successfully')
+                         alert('You are successfully registered. Please check your mail')
+                         
+                         
            }
                 });
           }
@@ -193,6 +181,8 @@ $(document).ready(function() {
 	<div id="sk"></div>
 	<div id="sk2"></div>
         <div id="sk3"></div>
+        <div id="sk4"></div>
+        <div id="sk5"></div>
 
     </body> 
 
