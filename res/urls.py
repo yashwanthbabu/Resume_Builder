@@ -9,7 +9,6 @@ urlpatterns = patterns('',
     url(r'^registration/$', 'res1.views.registration', name='registration'),
     url(r'^addmore/$', 'res1.views.addmore', name='addmore'),
     url(r'^profn/$', 'res1.views.profn', name='profn'),
-    url(r'^email/$', 'res1.views.email', name='email'),
     url(r'^send/$', 'res1.views.send', name='send'),
     #url(r'^mail/$','res1.views.mail', name='mail'),
     
