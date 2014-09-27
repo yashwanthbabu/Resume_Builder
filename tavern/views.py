@@ -11,7 +11,7 @@ from django.views.generic import DetailView
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import SingleObjectMixin
 
-from guardian.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from guardian.mixins import LoginRequiredMixin, PermissionRequiredMixin 
 
 from .models import TavernGroup, Membership, Event, Attendee
 from .forms import CreateGroupForm, CreateEventForm, UpdateEventForm, AddOrganizerForm, RemoveOrganizerForm
